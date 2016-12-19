@@ -1,0 +1,18 @@
+1、如何将coding上的工程下载到本地
+  使用git cmd 输入命令（git clone https://git.coding.net/star_x/WhatsHabit.git）下载。首先选好一个文件夹，来存放工程项目。
+  
+2、克隆完成之后，打开Source Tree，“文件”->“打开”->选择clone的工程所在的文件夹
+
+3、打开Android Studio->“import project”->“导入工程”
+
+4、在Android Studio的Terminal终端下执行“git status”，查看当前所在的分支
+
+5、如果coding中有文件更新，可以在as或sourcetree中完成更新。
+  在as中，首先执行git stash: 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。
+                            同时，将当前的工作区内容保存到Git栈中。
+                            
+         再执行“git pull --rebase origin master”拉取远程分支 
+         
+         最后执行“git stash pop”：从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。
+                                 由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
+                    
