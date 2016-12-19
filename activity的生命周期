@@ -1,0 +1,28 @@
+1、进入Activity
+　　　onCreate  -> onStart  ->  onResume
+   
+2、BACK键
+　　　onPause　->　onStop　->　onDestroy
+   
+3、HOME键
+　　　Home键退出：onPause　->　onStop
+　　　Home键回来：onRestart ->  onStart　->　onResume 
+   
+4、休眠/恢复
+　　　休眠：　　onPause
+　　　恢复：　　onResume
+   
+5、与广播(Broadcast)结合
+　　　在onResume注册广播(registerLinstener)，在onPause注销广播(unregisterLinstener)。
+   
+6、与服务(Service)结合
+　　　在onStart绑定服务(bindService)，在onStop中取消绑定(unbindService)。 
+   
+   
+   
+onCreate():创建Activity调用，用于Activity的初始化，还有个Bundle类型的参数，可以访问以前存储的状态。
+onStart():Activity在屏幕上对用户可见时调用
+onResume():Activity开始和用户交互的时候调用，这时该Activity是在Activity栈的顶部。
+onPause():Activity被暂停时调用，也就是你要对你能看到的这个Activity说byebye的时候调用,这里可以做一些清理和保存工作
+onStop():Activity被停止或者Activity变成不可见时调用
+onDestroy():Activity被从内存中移除，一般发生在执行finish方法时或者Android回收内存的时候
