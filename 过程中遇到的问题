@@ -1,0 +1,15 @@
+使用as和sourcetree 上传/下载 更新，过程中会遇到很多问题，下边将所遇问题记录下来；
+
+1、Android Studio 的设置： Help---Edit custom VM option---输入一下设置
+    -Xms1024m
+    -Xmx2048m
+    -XX:MaxPermSize=768m
+    -XX:ReservedCodeCacheSize=768m
+    -XX:+UseCompressedOops
+    
+2、当as无法直接使用手机直接运行时，需要作如下修改：
+   File--- Setting --- Build, Execution,Deployment ---- Instant Run ---全部取消选择；
+   并删除项目中 与“app”同级的“build”文件
+   
+
+   
