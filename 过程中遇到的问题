@@ -11,5 +11,8 @@
    File--- Setting --- Build, Execution,Deployment ---- Instant Run ---全部取消选择；
    并删除项目中 与“app”同级的“build”文件
    
+3、
+   git checkout -- .idea/gradle.xml
+   
 
    
