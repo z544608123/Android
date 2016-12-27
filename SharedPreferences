@@ -1,0 +1,9 @@
+使用SharedPreferences进行数据存储
+
+SharedPreferences它是一个轻量级的存储类，适合用于保存软件配置参数。
+
+SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+Editor editor = sharedPreferences.edit();//获取编辑器
+editor.putString("name", "zhang");
+editor.putInt("age", 22);
+editor.commit();//提交修改
