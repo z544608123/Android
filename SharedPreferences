@@ -1,9 +1,23 @@
 使用SharedPreferences进行数据存储
 
-SharedPreferences它是一个轻量级的存储类，适合用于保存软件配置参数。
+1、介绍
+   SharedPreferences是一个轻量级的存储类，适合用于保存软件配置参数。
+   程序无法直接创建SharedPreferences实例，只能通过conext的getSharedPreferences(String, int)的获取接口实例。
 
-SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
-Editor editor = sharedPreferences.edit();//获取编辑器
-editor.putString("name", "zhang");
-editor.putInt("age", 22);
-editor.commit();//提交修改
+2、语法结构
+   getSharedPreferences(name , mode) 
+   mode可以为：Context.MODE_PRIVATE、Context.MODE_WORLD_READABLE
+   其中Context.MODE_PRIVATE:指定该SharedPreferences数据只能被本应用程序或者是拥有相同user ID的应用读、写。
+
+3、如何向SharedPreferences中写入数据
+   需要获取SharedPreferences的编辑对象即：SharedPreferences.Editor :  使用 edit()
+   使用putXXX()方法，向preferences写入数据
+    SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+    Editor editor = sharedPreferences.edit();//获取编辑器
+    editor.putString("name", "zhang");
+    editor.putInt("age", 22);
+    editor.commit();//提交修改
+    
+ 4、注意点
+   SharedPreferences最好不要用来保存多个程序交互使用的共享数据，
+   最好使用ContentProvider, BroadcastReceiver, and Service 来完成多个程序之间的数据共享。
