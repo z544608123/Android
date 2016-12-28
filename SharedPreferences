@@ -18,6 +18,20 @@
     editor.putInt("age", 22);
     editor.commit();//提交修改
     
- 4、注意点
+ 4、注意
    SharedPreferences最好不要用来保存多个程序交互使用的共享数据，
    最好使用ContentProvider, BroadcastReceiver, and Service 来完成多个程序之间的数据共享。
+   
+5、SharedPreference.Editor的apply和commit方法异同
+   a. apply没有返回值而commit返回boolean表明修改是否提交成功 
+   b. 当两个editor对象同时对一个共享的preferences参数进行操作时，永远都是最后一个调用commit方法/apply方法的editor变更了最后的数据值
+   c. 提交操作是原子性的
+   
+   commit和apply虽然都是原子性操作，但是原子的操作不同，commit是原子提交到数据库，所以从提交数据到存在Disk中都是同步过程，中间不可打断。
+
+而apply方法的原子操作是原子提交的内存中，而非数据库，所以在提交到内存中时不可打断，之后再异步提交数据到数据库中，因此也不会有相应的返回值。
+
+所有commit提交是同步过程，效率会比apply异步提交的速度慢，但是apply没有返回值，永远无法知道存储是否失败。
+
+在不关心提交结果是否成功的情况下，优先考虑apply方法。
+
