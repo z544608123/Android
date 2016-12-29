@@ -1,0 +1,1 @@
+当出现@BindView错误时，执行gradlew assembleDebug下载开源库
