@@ -15,3 +15,14 @@
   Package Name：项目包名，具有唯一性
   
 4、onCreate()方法是一个活动被创建时，必定要执行的方法
+
+5、string.xml 中，对字符串的定义，以键值对的形式
+
+6、日志工具Log
+  Log.v  打印意义最小的日志信息
+  Log.d  打印调试信息
+  Log.i  比较重要的数据
+  Log.w  警告信息
+  Log.e  错误信息
+  
+  格式：Log.e(tag,msg)
