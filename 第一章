@@ -1,11 +1,16 @@
-Android四层架构：
+1、Android四层架构：
   Linux内核层
   系统运行库层
   应用框架层
   应用层
   
-Android四大组件：
+2、Android四大组件：
   活动（Activity） Android程序的门面，凡是在应用中看得到的东西，都放在活动中；
   服务（Service）
   广播（BroadcastReceiver）
   内容提供库（ContentProvider）
+
+3、创建项目  
+  Application Name：应用名称
+  Project Name：项目名称
+  Package Name：项目包名，具有唯一性
