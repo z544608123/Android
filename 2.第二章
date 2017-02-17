@@ -1,0 +1,41 @@
+活动（Activity）：主要用于和用户进行交互。
+
+1.活动的注册声明要放在<application>标签内；
+
+2.配置主活动的方法：在<activity>标签内加入<intent-filter>标签；
+  给主活动指定的label会成为标题栏中的内容，也会成为启动器中应用程序显示的名称。
+  
+3.Toast用法： Toast.makeText(context,显示的内容,显示的时长).show();
+
+4.添加菜单栏<menu></menu>
+  <item>标签用来创建具体的菜单项；
+  android:id 给菜单项指定一个唯一的标识；
+  android:title 给菜单项指定一个名称
+  
+5.重写方法快捷键： Ctrl+o
+
+6.活动创建菜单
+  重写onCreateOptionsMenu()方法，通过getMenuInflater().inflate(R.menu. , )方法给当前活动创建菜单。
+  
+7.销毁当前活动：finish();
+
+8.活动之间的跳转
+  显式：Intent(Context, Class)
+  隐式：在AndroidMainifest.xml中添加相应代码，再在相应的活动中添加 Intent("");
+  
+9.启动活动：StartActivity();
+
+10.通过Uri.parse()方法，将网址字符串解析成一个Uri对象
+
+11.活动之间传递数据：putExtra()方法； intent.putExtra("键", 值);
+  getStringExtra()方法获取数据； intent.getStringExtra("键");
+  
+12.活动的生存期
+  完整生存期：活动在onCreate()和onDestroy()之间所经历的
+  可见生存期：活动在onStart()和onStop()之间所经历的
+  前台生存期：活动在onResume()和onPause()之间所经历的
+
+13.Activity中提供了一个onSaveInstance()方法，保证活动在被回收之前一定被调用
+
+14.活动启动的四种模式： standard、singleTop、singleTask、singleInstance。
+  在AndroidMainifest.xml中通过给activity标签指定android:launchMode属性来选择启动模式
