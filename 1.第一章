@@ -9,9 +9,9 @@
   服务（Service）              在后台运行
   广播（BroadcastReceiver）    接受/发送广播消息
   内容提供库（ContentProvider） 应用程序之间共享数据
+  
 3、创建项目  
   Application Name：应用名称
-  Project Name：项目名称
   Package Name：项目包名，具有唯一性
   
 4、onCreate()方法是一个活动被创建时，必定要执行的方法
@@ -26,3 +26,7 @@
   Log.e  错误信息
   
   格式：Log.e(tag,msg)
+
+7、图片在drawable目录下，布局在layout中，字符串在values目录下
+
+8、应用名称通过android:label属性指定
